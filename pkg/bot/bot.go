@@ -21,112 +21,9 @@ type botRepo struct {
 
 var numericKeyboard = tgbotapi.NewReplyKeyboard(
 	tgbotapi.NewKeyboardButtonRow(
-		tgbotapi.NewKeyboardButton("Хочу короткий комплимент!!!"),
+		tgbotapi.NewKeyboardButton("Хочу короткий комплимент"),
 		tgbotapi.NewKeyboardButton("Хочу длинный комплимент"),
 	))
-
-var SimpleCompliments = []string {
-		"красивая",
-		"умная",
-		"заботливая",
-		"привлекательная",
-		"сексуальная",
-		"добрая",
-		"нежная",
-		"милая",
-		"очаровательная",
-		"обворожительная",
-		"неповторимая",
-		"неописуемая",
-		"незабываемая",
-		"неотразимая",
-		"шикарная",
-		"ослепительная",
-		"страстная",
-		"недоступная",
-		"божественная",
-		"завораживающая",
-		"ангельская",
-		"лучезарная",
-		"сексапильная",
-		"яркая",
-		"пушистая",
-		"обалденная",
-		"сногсшибательная",
-		"стройная",
-		"обольстительная",
-		"кокетливая",
-		"утончённая",
-		"грациозная",
-		"весёлая",
-		"энергичная",
-		"креативная",
-		"стильная",
-		"коммуникабельная",
-		"тактичная",
-		"любвиобильная",
-		"романтичная",
-		"разносторонняя",
-		"сказочная",
-		"симпатичная",
-		"пылкая",
-		"единственная",
-		"ласковая",
-		"сладенькая",
-		"умопомрачительная",
-		"желанная",
-		"непредсказуемая",
-		"загадочная",
-		"цветущая",
-		"безупречная",
-		"гармоничная",
-		"отзывчивая",
-		"совершенная",
-		"лучшая",
-		"скромная",
-		"изысканная",
-		"шаловливая",
-		"отпадная",
-		"искренная",
-		"дружелюбная",
-		"понимающая",
-		"экстравагантная",
-		"мечтательная",
-		"ароматная",
-		"искромётная",
-		"чистолюбивая",
-		"манящая",
-		"восторженная",
-		"бескорыстная",
-		"непосредственная",
-		"соблазнительная",
-		"одурманивающая",
-		"жизнерадостнаяя",
-		"прелестная",
-		"улыбчивая",
-		"застенчивая",
-		"зажигательная",
-		"честная",
-		"возбуждающая",
-		"чистосердечная",
-		"игривая",
-		"обаятельная",
-		"офигительная",
-		"целеустремлённая",
-		"дивная",
-		"женственная",
-		"блаженная",
-		"бесподобная",
-		"лучезарная",
-		"ненаглядная",
-		"необходимая",
-		"изумительная",
-		"сказочная",
-		"трогательная",
-		"миниатюрная",
-		"любимая",
-		"самая-самая",
-	}
 
 func NewBotRepo(bot *tgbotapi.BotAPI, s service.Service, updates tgbotapi.UpdatesChannel) (BotRepo, error) {
 	return &botRepo{
@@ -221,14 +118,18 @@ func(br *botRepo) LoveBot()error{
 
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
-		if update.Message.Text ==  "Привет"{
+		if update.Message.Text ==  "Привет" || update.Message.Text == "привет"{
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Привет пупс ❤")
 			msg.ReplyMarkup = numericKeyboard
 			br.bot.Send(msg)
-			if update.Message.Text == "Хочу короткий комплимент!!!"{
-				complimentMsg := tgbotapi.NewMessage(update.Message.Chat.ID, SimpleCompliments[rand.Intn(len(SimpleCompliments))])
-				br.bot.Send(complimentMsg)
-			}
+		}
+		if update.Message.Text == "Хочу короткий комплимент"{
+			complimentMsg := tgbotapi.NewMessage(update.Message.Chat.ID, SimpleCompliments[rand.Intn(len(SimpleCompliments))])
+			br.bot.Send(complimentMsg)
+		}
+		if update.Message.Text =="Хочу длинный комплимент" {
+			complimentMsg := tgbotapi.NewMessage(update.Message.Chat.ID, LongCompliments[rand.Intn(len(LongCompliments))])
+			br.bot.Send(complimentMsg)
 		}
 	}
 	return nil
