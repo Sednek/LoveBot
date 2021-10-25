@@ -12,8 +12,8 @@ import (
 
 const (
 	dbData = "user=sednek password=1 dbname=telegrambot sslmode=disable"
-	botToken = "2069523748:AAHzvQaLpuUPx49i0hyepjBlQKx8vDctH78"
-	ipApiKey = "f5bf67bb138398b5a6f96559d6932963"
+	botToken = "botToken"
+	ipApiKey = "ipApiToken"
 )
 
 func main(){
