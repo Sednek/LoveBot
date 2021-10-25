@@ -1,7 +1,7 @@
 package bot
 
 import (
-	service "LoveBot/LoveBot/pkg/service"
+	service "LoveBot/pkg/service"
 	"fmt"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
