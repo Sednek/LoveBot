@@ -118,6 +118,11 @@ func(br *botRepo) LoveBot()error{
 
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
+		if update.Message.Text == "/start"{
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Привееет! я бот комплиметов. Напиши мне привет.")
+			br.bot.Send(msg)
+		}
+
 		if update.Message.Text ==  "Привет" || update.Message.Text == "привет"{
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Привет пупс ❤")
 			msg.ReplyMarkup = numericKeyboard
