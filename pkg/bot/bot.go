@@ -1,8 +1,8 @@
 package bot
 
 import (
-	service "LoveBot/pkg/service"
 	"fmt"
+	"github.com/Sednek/LoveBot/pkg/service"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
 	"math/rand"
