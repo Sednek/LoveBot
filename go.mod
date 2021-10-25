@@ -1,4 +1,4 @@
-module github.com/Sednek/LoveBot
+module github.com/Sednek/LoveBot/LoveBot
 
 go 1.16
 

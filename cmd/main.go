@@ -1,9 +1,9 @@
 package main
 
 import (
-	botRepo "TelegramBot/pkg/bot"
-	"TelegramBot/pkg/repo"
-	"TelegramBot/pkg/service"
+	botRepo "LoveBot/LoveBot/pkg/bot"
+	"LoveBot/LoveBot/pkg/repo"
+	"LoveBot/LoveBot/pkg/service"
 	"database/sql"
 	"fmt"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
