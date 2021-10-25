@@ -13,8 +13,8 @@ type BotRepo interface {
 	LoveBot()error
 }
 type botRepo struct {
-	bot *tgbotapi.BotAPI
-	s service.Service
+	bot     *tgbotapi.BotAPI
+	s       service.Service
 	updates tgbotapi.UpdatesChannel
 }
 
