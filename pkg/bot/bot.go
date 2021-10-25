@@ -14,7 +14,7 @@ type BotRepo interface {
 }
 type botRepo struct {
 	bot     *tgbotapi.BotAPI
-	s       service.Service
+	s service.Service
 	updates tgbotapi.UpdatesChannel
 }
 

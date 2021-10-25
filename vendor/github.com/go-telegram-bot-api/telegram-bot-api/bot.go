@@ -25,8 +25,8 @@ type BotAPI struct {
 	Debug  bool   `json:"debug"`
 	Buffer int    `json:"buffer"`
 
-	Self            User         `json:"-"`
-	Client          *http.Client `json:"-"`
+	Self   User         `json:"-"`
+	Client *http.Client `json:"-"`
 	shutdownChannel chan interface{}
 }
 
